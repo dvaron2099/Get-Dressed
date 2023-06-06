@@ -1,0 +1,24 @@
+<div class="container shadow mt-3 p-3 w-50">
+  <% if clothe.new_record? %>
+    <h5 class="text-center">Crea tu Prenda</h5>
+  <% else %>
+    <h5 class="text-center">Editar tu Prenda</h5>
+  <% end %>
+  <%= simple_form_for clothe do |f| %>
+    <%= f.input :name %>
+    <%= f.input :gender %>
+    <%= f.input :category %>
+    <%= f.input :price %>
+    <%= f.input :size %>
+    <%= f.input :photo, as: :file %>
+    <%= f.input :description %>
+    <div class="row d-flex justify-content-center">
+      <div class="col-2">
+        <%= f.submit clothe.new_record? ? "Crear" : "Actualizar", class:"btn btn-success"%>
+      </div>
+      <div class="col-2">
+         <%= link_to "Volver", clothes_path, class:"btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>
