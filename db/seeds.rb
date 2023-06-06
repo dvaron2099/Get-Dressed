@@ -120,7 +120,7 @@ clothe8 = Clothe.create(
 # https://argentina-media.renuevatucloset.com/product/0097/07/thumb_9606381_product_medium.jpeg
 
 
-clothe9 = clothe.create(
+clothe9 = Clothe.create(
   category: "Chaqueta",
   size: "XL",
   description:"Campera montage impermeable. En perfecto estado,es tan linda como la ves en fotos. Medidas: 45cm de axila a axila,90cm de contorno de busto,56cm de largo,37cm de hombro a hombro,50cm largo de mangas de sisa a puños.",
@@ -129,7 +129,8 @@ clothe9 = clothe.create(
   gender: "Hombre"
 )
 # https://www.renovatuvestidor.com/producto/kids/niños/remeras/18763439
-clothe10 = clothe.create(
+
+clothe10 = Clothe.create(
   category: "Polera",
   size: "L",
   description:"impecable sin uso",
@@ -138,20 +139,59 @@ clothe10 = clothe.create(
   gender: "Hombre"
 )
 # https://www.renovatuvestidor.com/producto/kids/niños/jeans/18764781
-clothe11 = clothe.create(
+clothe11 = Clothe.create(
   category: "Jeans",
   size: "M",
   description:"jean gap straight fit azul oscuro",
   price: 9.50,
-  name: "Pantalons Jeans",
+  name: "Pantalon Jeans",
   gender: "Hombre"
 )
 # https://www.renovatuvestidor.com/producto/kids/niños/jeans/18764781
-clothe12 = clothe.create(
+clothe12 = Clothe.create(
   category: "Jeans",
   size: "M",
   description:"jean gap straight fit azul oscuro",
   price: 9.50,
-  name: "Pantalons Jeans",
+  name: "Pantalon Jeans",
   gender: "Hombre"
 )
+clothe13 = Clothe.create(
+  name: "Jeans negros",
+  gender: "Hombre",
+  category: "Jeans",
+  size: "M",
+  description: "Jeans en buenas condiciones",
+  price: 95)
+
+# https://argentina-media.renuevatucloset.com/product/0184/64/thumb_18363587_product_medium.jpeg
+
+clothe14 = Clothe.create(
+  name: "Camisa Polo",
+  gender: "Hombre",
+  category: "Camisa",
+  size: "L",
+  description: "camisa a cuadros como nueva",
+  price: 70)
+
+# https://argentina-media.renuevatucloset.com/product/0184/34/thumb_18333459_product_medium.jpeg
+
+clothe15 = Clothe.create(
+  name: "Chaleco columbia",
+  gender: "Hombre",
+  category: "Chaleco",
+  size: "S",
+  description: "Chaleco vintage del año 2010",
+  price: 50)
+
+# https://argentina-media.renuevatucloset.com/product/0184/59/thumb_18358486_product_medium.jpeg
+
+clothe16 = Clothe.create(
+  name: "Cardigan penguin",
+  gender: "Hombre",
+  category: "Cardigan",
+  size: "M",
+  description: "Cardigan de otoño",
+  price:50)
+
+# https://argentina-media.renuevatucloset.com/product/0184/10/thumb_18309377_product_medium.jpeg
