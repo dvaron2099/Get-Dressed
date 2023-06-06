@@ -38,78 +38,120 @@ user4 = User.create(
 )
 
 clothe1 = Clothe.create(
-  name: "Sweater"
-  gender: "Mujer"
-  category: "Abrigos"
-  size: "S"
-  description: "Sweater con bolsillos. Axilas 47cm. Hombros caídos. Cintura 96cm. Cadera 98cm. Largo 87cm."
+  name: "Sweater",
+  gender: "Mujer",
+  category: "Abrigos",
+  size: "S",
+  description: "Sweater con bolsillos. Axilas 47cm. Hombros caídos. Cintura 96cm. Cadera 98cm. Largo 87cm.",
   price: 15
 )
 # https://www.renovatuvestidor.com/producto/mujer/ropa/sweaters/18763799
 
 clothe2 = Clothe.create(
-  name: "Sweater Lurex"
-  gender: "Mujer"
-  category: "Abrigos"
-  size: "XL"
-  description: "Sweater de la diseñadora Tory Burch modelo lurex stripe sweater confeccionado en lana merino y elastano en tono negro y plata con botones en el lateral. Comprado en new york, primerísima calidad y diseño!!!"
+  name: "Sweater Lurex",
+  gender: "Mujer",
+  category: "Abrigos",
+  size: "XL",
+  description: "Sweater de la diseñadora Tory Burch modelo lurex stripe sweater confeccionado en lana merino y elastano en tono negro y plata con botones en el lateral. Comprado en new york, primerísima calidad y diseño!!!",
   price: 120
 )
 # https://www.renovatuvestidor.com/producto/mujer/ropa/sweaters/18763790
 
 clothe3 = Clothe.create(
-  name: "Sweater Wanama"
-  gender: "Mujer"
-  category: "Abrigos"
-  size: "S"
-  description: "Sweater *wanama, talle s. Acrílico 80, viscosa 20. Ancho axilas 120, largo 73."
+  name: "Sweater Wanama",
+  gender: "Mujer",
+  category: "Abrigos",
+  size: "S",
+  description: "Sweater *wanama, talle s. Acrílico 80, viscosa 20. Ancho axilas 120, largo 73.",
   price: 37.3
 )
 # https://www.renovatuvestidor.com/producto/mujer/ropa/sweaters/18763905
 
 clothe4 = Clothe.create(
-  name: "Saco Jazmín Chebar"
-  gender: "Mujer"
-  category: "Abrigos"
-  size: "ÚNICO"
-  description: "Bellísimo tapado jazmin chebar largo, de paño de lana, con cuello de piel de conejo. Mangas terminadas en cuero legítimo con piel corderito. Posee detalles en cuero y piel corderito. Tiene dos formas de cerrarlo: con un cierre en la parte más alta y con otro cierre que abarca todo el tapado. Forrado en raso estampado c/boquitas jch. Composición: 70% lana virgen + poliamida + cashmere + cuero ovino + piel conejo. Talle 1/40. Muy cuidado. hermoso y super abrigado! Un fuego!"
+  name: "Saco Jazmín Chebar",
+  gender: "Mujer",
+  category: "Abrigos",
+  size: "ÚNICO",
+  description: "Bellísimo tapado jazmin chebar largo, de paño de lana, con cuello de piel de conejo. Mangas terminadas en cuero legítimo con piel corderito. Posee detalles en cuero y piel corderito. Tiene dos formas de cerrarlo: con un cierre en la parte más alta y con otro cierre que abarca todo el tapado. Forrado en raso estampado c/boquitas jch. Composición: 70% lana virgen + poliamida + cashmere + cuero ovino + piel conejo. Talle 1/40. Muy cuidado. hermoso y super abrigado! Un fuego!",
   price: 480
 )
 #  https://www.renovatuvestidor.com/producto/mujer/ropa/sacos/18763881
+
+clothe5 = Clothe.create(
+  name: "Short Anthropologie",
+  category: "Short",
+  gender: "mujer",
+  size: "S",
+  description: "short verde militar con bolsillos y elástico en la cintura",
+  price: 10.00
+)
+
+# https://argentina-media.renuevatucloset.com/product/0180/20/thumb_17919026_product_medium.jpeg
+
+clothe6 = Clothe.create(
+  name: "Saco Banana Republic",
+  category: "Blazer",
+  gender: "Hombre",
+  size: "M",
+  description: "blazer impecable 1 sola postura",
+  price: 15.00
+)
+# https://argentina-media.renuevatucloset.com/product/0179/24/thumb_17823080_product_medium.jpeg
+
+clothe7 = Clothe.create(
+  name: "Vestido Banana Republic",
+  category: "Vestido",
+  gender: "Mujer",
+  size: "XXS",
+  description: "vestido largo, talle 0 manga corta, encaje azul marino medidas: cintura:30cm sisa: 34cm largo desde los hombros: 120cm ancho hombros: 32cm",
+  price: 12.00
+)
+
+# https://argentina-media.renuevatucloset.com/product/0138/57/thumb_13756389_product_medium.jpeg
+
+clothe8 = Clothe.create(
+  name: "Camisa Banana Republic",
+  category: "Camisa",
+  gender: "Hombre",
+  size: "S",
+  description: "camisa entallada marca banana republic blanca con rayas en dos tonos azules",
+  price: 13.00
+)
+# https://argentina-media.renuevatucloset.com/product/0097/07/thumb_9606381_product_medium.jpeg
 
 
 clothe9 = clothe.create(
   category: "Chaqueta",
   size: "XL",
-  description:"Campera montage impermeable. En perfecto estado,es tan linda como la ves en fotos. Medidas: 45cm de axila a axila,90cm de contorno de busto,56cm de largo,37cm de hombro a hombro,50cm largo de mangas de sisa a puños."
+  description:"Campera montage impermeable. En perfecto estado,es tan linda como la ves en fotos. Medidas: 45cm de axila a axila,90cm de contorno de busto,56cm de largo,37cm de hombro a hombro,50cm largo de mangas de sisa a puños.",
   price: 12.50,
-  name: "Chaqueta ñiño"
+  name: "Chaqueta ñiño",
   gender: "Hombre"
 )
 # https://www.renovatuvestidor.com/producto/kids/niños/remeras/18763439
 clothe10 = clothe.create(
   category: "Polera",
   size: "L",
-  description:"impecable sin uso"
+  description:"impecable sin uso",
   price: 15.50,
-  name: "Polera PSG"
+  name: "Polera PSG",
   gender: "Hombre"
 )
 # https://www.renovatuvestidor.com/producto/kids/niños/jeans/18764781
 clothe11 = clothe.create(
   category: "Jeans",
   size: "M",
-  description:"jean gap straight fit azul oscuro"
+  description:"jean gap straight fit azul oscuro",
   price: 9.50,
-  name: "Pantalons Jeans"
+  name: "Pantalons Jeans",
   gender: "Hombre"
 )
 # https://www.renovatuvestidor.com/producto/kids/niños/jeans/18764781
 clothe12 = clothe.create(
   category: "Jeans",
   size: "M",
-  description:"jean gap straight fit azul oscuro"
+  description:"jean gap straight fit azul oscuro",
   price: 9.50,
-  name: "Pantalons Jeans"
+  name: "Pantalons Jeans",
   gender: "Hombre"
 )
