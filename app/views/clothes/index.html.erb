@@ -1,0 +1,8 @@
+<h1>Mi ropa</h1>
+
+<% @clothes.each do |clothe| %>
+  <%= link_to clothe.name, clothe_path(clothe) %>
+  <%= clothe.price %>
+  <%= clothe.description %>
+  <%= clothe.size %>
+<% end %>
