@@ -31,3 +31,5 @@ class ClothesController < ApplicationController
     @clothe = Clothe.find(params[:id])
   end
 end
+
+#probando pull request
