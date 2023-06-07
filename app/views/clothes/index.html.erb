@@ -1,10 +1,29 @@
-<h1>Mi ropa</h1>
-<br>
-<%= link_to "ingresa usuario", new_user_session_path %>
-<br>
-<% @clothes.each do |clothe| %>
-  <%= link_to clothe.name, clothe_path(clothe) %>
-  <%= clothe.price %>
-  <%= clothe.description %>
-  <%= clothe.size %>
-<% end %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img.freepik.com/fotos-premium/ropa-moda-perchas-armario-sobre-fondo-color_441923-7474.jpg);">
+  <div class="container">
+    <h1>Sumate a la <strong>moda circular</strong>!</h1>
+    <p>Alquilá las prendas que te gustan y ofertá las tuyas.</p>
+    <%= link_to "Ofertá tus prendas", new_clothe_path, class:"btn btn-flat" %>
+  </div>
+</div>
+
+
+
+  <h4 class="ms-4 mt-4"> Prendas destacadas </h4>
+  <br>
+  <div class="container d-flex justify-content-evenly flex-wrap">
+    <% @clothes.each do |clothe| %>
+      <div class="card mb-3 text-center" style="width: 18rem;">
+        <%= image_tag clothe.photos.first, class:"card-img-top", crop: :fill %>
+        <div class="card-body">
+          <%= link_to clothe.name, clothe_path(clothe), class:"card-title text-decoration-none fw-bold fs-5 text mb-2" %>
+          <h6 class="card-subtitle mb-2 text-muted fs-6 text"><%=clothe.category%></h6>
+          <div class="d-flex justify-content-center">
+            <p class="card-text fw-bold me-2">$<%= clothe.price %></p>
+            <i class="fa-solid fa-ruler" style="color: #646464;"></i>
+            <p class="card-text text-muted ms-1"><%= clothe.size %></p>
+          </div>
+          <%= link_to "Quiero Alquilarla", new_clothe_rent_path(clothe), class:"btn btn-flat" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
