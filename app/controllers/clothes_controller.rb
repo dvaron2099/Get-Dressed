@@ -23,7 +23,7 @@ class ClothesController < ApplicationController
   private
 
   def clothe_params
-    params.require(:clothe).permit(:name, :category, :price, :size, :gender, :description)
+    params.require(:clothe).permit(:name, :category, :price, :size, :gender, :description, photos:[])
     # agregar fotos
   end
 
