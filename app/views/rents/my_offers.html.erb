@@ -1,5 +1,8 @@
-<% current_user.clothes.each do |clothe| %>
-  <% if clothe.rent.status==false %>
-  <%= clothe.name %>
+<div class="container w-50 shadow rounded p-5">
+  <% current_user.clothes.each do |clothe| %>
+    <p><%= clothe.name %></p>
+      <% clothe.rents.where(status: false).each do |rent| %>
+        <%= rent.user_id%>  <%= rent.user.email %> <%= link_to "Aceptar",  edit_rent_path(rent.id) %>
+      <% end %>
   <% end %>
-<% end %>
+</div>

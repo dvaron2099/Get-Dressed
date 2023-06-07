@@ -20,11 +20,22 @@ class RentsController < ApplicationController
   end
 
   def my_rents
-   
+
   end
 
   def my_offers
 
+  end
+
+  def edit
+    @rent = Rent.find(params[:id])
+
+  end
+
+  def update
+    @rent =  Rent.find(params[:id])
+    @rent.status = params[:status]
+    @rent.save
   end
 
   private

@@ -13,6 +13,7 @@ class ClothesController < ApplicationController
 
   def create
     @clothe = Clothe.new(clothe_params)
+    @clothe.user = current_user
     if @clothe.save
       redirect_to clothe_path(@clothe), notice: "Prenda cargada exitosamente"
     else
@@ -23,7 +24,7 @@ class ClothesController < ApplicationController
   private
 
   def clothe_params
-    params.require(:clothe).permit(:name, :category, :price, :size, :gender, :description, photos:[])
+    params.require(:clothe).permit(:name, :category, :price, :size, :gender, :description, photos: [])
     # agregar fotos
   end
 
