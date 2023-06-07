@@ -1,4 +1,22 @@
-<% current_user.rents.each do |rent| %>
-   <%= rent.clothe.name %>
-  <p> Fecha de inicio: <%= rent.pickup_date %>, Fecha de devolución: <%= rent.return_date %>, Status: <%= rent.status %> </p>
-<% end %>
+<div class="container mt-3 p-3">
+<h2><strong>Prendas que tienes en alquiler:</strong></h2>
+</div>
+<div class="container mt-3 p-3">
+  <% current_user.rents.each do |rent| %>
+    <div class="col-sm-6">
+      <div class="card d-flex">
+        <div class="card-image">
+        <%# </div> <img src="" /> %>
+        <div class="card-body">
+          <h5 class="card-title"><strong><%= rent.clothe.name %></strong></h5>
+            <ul>
+          <li class="card-text">Fecha de inicio: <%= rent.pickup_date %> </li>
+          <li class="card-text">Fecha de devolución: <%= rent.return_date %> </li>
+          <li class="card-text">Status: <%= rent.status %></li>
+          <a href="#" class="btn btn-primary p-2 mt-3">Check details</a>
+            </ul>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
