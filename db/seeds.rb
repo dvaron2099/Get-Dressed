@@ -5,9 +5,11 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+Rent.destroy_all if Rails.env.development?
 User.destroy_all if Rails.env.development?
 Clothe.destroy_all if Rails.env.development?
-Rent.destroy_all if Rails.env.development?
+
+require "open-uri"
 
 user1 = User.create(
   email:"sofiamontanari.a@gmail.com",
@@ -332,3 +334,99 @@ rent16 = Rent.create(
 )
 
 puts " 16 rents have been created"
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351238_product_small.jpeg")
+clothe1.photos.attach(io: file, filename: "thumb_18351238_product_small.jpeg", content_type: "image/jpg")
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351239_product_small.jpeg")
+clothe1.photos.attach(io: file, filename: "thumb_18351239_product_small.jpeg", content_type: "image/jpg")
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351190_product_small.jpeg")
+clothe2.photos.attach(io: file, filename: "thumb_18351190_product_small.jpeg", content_type: "image/jpg")
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351192_product_small.jpeg")
+clothe2.photos.attach(io: file, filename: "thumb_18351192_product_small.jpeg", content_type: "image/jpg")
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351667_product_small.jpeg")
+clothe3.photos.attach(io: file, filename: "thumb_18351667_product_small.jpeg", content_type: "image/jpg")
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351668_product_small.jpeg")
+clothe3.photos.attach(io: file, filename: "thumb_18351668_product_small.jpeg", content_type: "image/jpg")
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351540_product_small.jpeg")
+clothe4.photos.attach(io: file, filename: "thumb_18351540_product_small.jpeg", content_type: "image/jpg")
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351541_product_small.jpeg")
+clothe4.photos.attach(io: file, filename: "thumb_18351541_product_small.jpeg", content_type: "image/jpg")
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351238_product_small.jpeg")
+clothe5.photos.attach(io: file, filename: "thumb_18351238_product_small.jpeg", content_type: "image/jpg")
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351239_product_small.jpeg")
+clothe5.photos.attach(io: file, filename: "thumb_18351239_product_small.jpeg", content_type: "image/jpg")
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351190_product_small.jpeg")
+clothe6.photos.attach(io: file, filename: "thumb_18351190_product_small.jpeg", content_type: "image/jpg")
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351192_product_small.jpeg")
+clothe6.photos.attach(io: file, filename: "thumb_18351192_product_small.jpeg", content_type: "image/jpg")
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351667_product_small.jpeg")
+clothe7.photos.attach(io: file, filename: "thumb_18351667_product_small.jpeg", content_type: "image/jpg")
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351668_product_small.jpeg")
+clothe7.photos.attach(io: file, filename: "thumb_18351668_product_small.jpeg", content_type: "image/jpg")
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351540_product_small.jpeg")
+clothe8.photos.attach(io: file, filename: "thumb_18351540_product_small.jpeg", content_type: "image/jpg")
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351541_product_small.jpeg")
+clothe8.photos.attach(io: file, filename: "thumb_18351541_product_small.jpeg", content_type: "image/jpg")
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351238_product_small.jpeg")
+clothe9.photos.attach(io: file, filename: "thumb_18351238_product_small.jpeg", content_type: "image/jpg")
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351239_product_small.jpeg")
+clothe9.photos.attach(io: file, filename: "thumb_18351239_product_small.jpeg", content_type: "image/jpg")
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351190_product_small.jpeg")
+clothe10.photos.attach(io: file, filename: "thumb_18351190_product_small.jpeg", content_type: "image/jpg")
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351192_product_small.jpeg")
+clothe10.photos.attach(io: file, filename: "thumb_18351192_product_small.jpeg", content_type: "image/jpg")
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351667_product_small.jpeg")
+clothe11.photos.attach(io: file, filename: "thumb_18351667_product_small.jpeg", content_type: "image/jpg")
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351668_product_small.jpeg")
+clothe11.photos.attach(io: file, filename: "thumb_18351668_product_small.jpeg", content_type: "image/jpg")
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351540_product_small.jpeg")
+clothe12.photos.attach(io: file, filename: "thumb_18351540_product_small.jpeg", content_type: "image/jpg")
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351541_product_small.jpeg")
+clothe12.photos.attach(io: file, filename: "thumb_18351541_product_small.jpeg", content_type: "image/jpg")
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351238_product_small.jpeg")
+clothe13.photos.attach(io: file, filename: "thumb_18351238_product_small.jpeg", content_type: "image/jpg")
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351239_product_small.jpeg")
+clothe13.photos.attach(io: file, filename: "thumb_18351239_product_small.jpeg", content_type: "image/jpg")
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351190_product_small.jpeg")
+clothe14.photos.attach(io: file, filename: "thumb_18351190_product_small.jpeg", content_type: "image/jpg")
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351192_product_small.jpeg")
+clothe14.photos.attach(io: file, filename: "thumb_18351192_product_small.jpeg", content_type: "image/jpg")
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351667_product_small.jpeg")
+clothe15.photos.attach(io: file, filename: "thumb_18351667_product_small.jpeg", content_type: "image/jpg")
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351668_product_small.jpeg")
+clothe15.photos.attach(io: file, filename: "thumb_18351668_product_small.jpeg", content_type: "image/jpg")
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351540_product_small.jpeg")
+clothe16.photos.attach(io: file, filename: "thumb_18351540_product_small.jpeg", content_type: "image/jpg")
+
+file = URI.open("https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351541_product_small.jpeg")
+clothe16.photos.attach(io: file, filename: "thumb_18351541_product_small.jpeg", content_type: "image/jpg")

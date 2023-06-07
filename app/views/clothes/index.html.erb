@@ -1,5 +1,7 @@
 <h1>Mi ropa</h1>
-
+<br>
+<%= link_to "ingresa usuario", new_user_session_path %>
+<br>
 <% @clothes.each do |clothe| %>
   <%= link_to clothe.name, clothe_path(clothe) %>
   <%= clothe.price %>
