@@ -11,6 +11,10 @@
             <%= link_to "Sign in", new_user_registration_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
+            <%= link_to "Sign out", destroy_user_session_path, class: "nav-link" %>
+          </li>
+
+          <li class="nav-item">
             <div class="dropdown-menu dropdown-menu-end">
               <%= link_to "Hombre", "#", class: "dropdown-item" %>
               <%= link_to "Mujer", "#", class: "dropdown-item" %>
