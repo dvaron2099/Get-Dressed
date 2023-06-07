@@ -1,0 +1,4 @@
+<% current_user.rents.each do |rent| %>
+   <%= rent.clothe.name %>
+  <p> Fecha de inicio: <%= rent.pickup_date %>, Fecha de devolución: <%= rent.return_date %>, Status: <%= rent.status %> </p>
+<% end %>

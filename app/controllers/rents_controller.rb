@@ -19,6 +19,14 @@ class RentsController < ApplicationController
     end
   end
 
+  def my_rents
+
+  end
+
+  def my_offers
+    
+  end
+
   private
 
   def rent_params

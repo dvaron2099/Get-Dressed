@@ -1,0 +1,5 @@
+<% current_user.clothes.each do |clothe| %>
+  <% if clothe.rent.status==false %>
+  <%= clothe.name %>
+  <% end %>
+<% end %>
