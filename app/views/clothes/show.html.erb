@@ -1,11 +1,58 @@
 <h1>Nueva prenda</h1>
 
-<%= @clothe.name %>
-<%= @clothe.category %>
-<%= @clothe.price %>
-<%= @clothe.size %>
-<%= @clothe.description %>
+<div class=" container d-flex justify-content-evenly">
+      <div class="card shadow rounded m-3" style="width: 25rem;">
 
-<%= link_to "Regresa al menu", clothes_path %>
-<%= link_to "Rentar esta prenda", new_clothe_rent_path(@clothe) %>
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351238_product_small.jpeg" class="d-block w-100" alt="...">
+       <%# <%= cl_image_tag @clothe.photos.key, class:"d-block w-100" %>
+    </div>
+    <div class="carousel-item">
+      <img src= "..." class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 
+
+                   <%# <img class="card-img-top" crop="imagga_scale" src="https://argentina-media.renuevatucloset.com/product/0184/52/thumb_18351238_product_small.jpeg"> %>
+
+        <div class="card" style="width: 25rem;">
+          <div class="card-body">
+            <h5 class="card-title"><%= @clothe.name %></h5>
+
+            <div class="d-flex justify-content-between">
+              <h6 class="card-subtitle mb-2 text-muted"><%= @clothe.category %></h6>
+              <h6 class="card-subtitle mb-2 text-muted"> USD <%=  @clothe.price %></h6>
+
+            </div>
+             <div class="d-flex align-items-center">
+              <p class="card-text fw-bold fs-6 ms-1">Size <%= @clothe.size %></p>
+            </div >
+
+            <p class="card-text"><%= @clothe.description %>.</p>
+            <div class="d-flex justify-content-between">
+            <%= link_to "Regresa al menu", clothes_path, class:"btn btn-outline-warning" %>
+           <%= link_to "Rentar esta prenda", new_clothe_rent_path(@clothe), class:"btn btn-outline-success"%>
+           </div>
+          </div>
+
+
+
+        </div>
+      </div>
+
+
+</div>
