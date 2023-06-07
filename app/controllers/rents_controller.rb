@@ -20,11 +20,11 @@ class RentsController < ApplicationController
   end
 
   def my_rents
-
+   
   end
 
   def my_offers
-    
+
   end
 
   private
