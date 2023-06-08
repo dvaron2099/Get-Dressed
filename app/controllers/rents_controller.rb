@@ -11,7 +11,7 @@ class RentsController < ApplicationController
     @clothe = Clothe.find(params[:clothe_id])
     @rent = Rent.new(rent_params)
     @rent.clothe_id = @clothe.id
-    @rent.user_id = @user.id
+    @rent.user = current_user
     if @rent.save
       redirect_to clothe_path(@clothe), notice: "Acabas de alquilar esta prenda"     ## Modificar luego para que lo vea en la vista del usuario en una lista de reservas
     else
@@ -34,7 +34,7 @@ class RentsController < ApplicationController
 
   def update
     @rent =  Rent.find(params[:id])
-    @rent.status = params[:status]
+    @rent.status = params[:status] #problemas no cambia el status
     @rent.save
   end
 
