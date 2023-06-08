@@ -15,28 +15,32 @@ user1 = User.create(
   email:"sofiamontanari.a@gmail.com",
   password: "123456",
   first_name: "Sofía",
-  last_name: "Montanari"
+  last_name: "Montanari",
+  user_name: "sofimontanari"
 )
 
 user2 = User.create(
   email:"varon@gmail.com",
   password: "789123",
   first_name: "David",
-  last_name: "Varon"
+  last_name: "Varon",
+  user_name: "dvaron2099"
 )
 
 user3 = User.create(
   email: "figueroa@gmail.com",
   password: "654321",
   first_name: "Chris",
-  last_name: "Figueroa"
+  last_name: "Figueroa",
+  user_name: "chriscoding23"
 )
 
 user4 = User.create(
   email: "bertintraverso@gmail.com",
   password: "332211",
   first_name: "Bertin",
-  last_name: "Traverso"
+  last_name: "Traverso",
+  user_name: "bertints"
 )
 
 puts " 4 users have been created"
