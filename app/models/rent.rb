@@ -7,4 +7,7 @@ class Rent < ApplicationRecord
   def set_status
     self.status = false
   end
+
+
+
 end

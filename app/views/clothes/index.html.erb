@@ -27,13 +27,13 @@
               <p class="card-text text-muted ms-1"><%= clothe.size %></p>
             </div>
               <% ropa = Rent.find_by(clothe_id: clothe.id) %>
-            <% if ropa.status == false %>
+            <%# if ropa.status == false %>
               <%= link_to "Quiero Alquilarla", new_clothe_rent_path(clothe), class:"btn btn-flat" %>
-              <% else %>
-              <%= link_to "Quiero Alquilarla", new_clothe_rent_path(clothe), class:"btn btn-flat" %>
-                <p class= "text-muted mt-1" >  Rentada hasta <%= ropa.return_date%></p>
+              <%# else %>
+              <%#= link_to "Quiero Alquilarla", new_clothe_rent_path(clothe), class:"btn btn-flat" %>
+                <p class= "text-muted mt-1" >  Rentada hasta <%#= ropa.return_date%></p>
               <%#=link_to "Rentada hasta #{ropa.return_date}",clothe_path(clothe), class:"btn btn-flat" %>
-            <% end %>
+            <%# end %>
           </div>
       </div>
     <% end %>

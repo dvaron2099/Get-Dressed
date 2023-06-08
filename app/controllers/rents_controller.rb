@@ -3,7 +3,13 @@ class RentsController < ApplicationController
   def new
     @rent = Rent.new
     @clothe = Clothe.find(params[:clothe_id])
-    @user = current_user
+    @reservations = @clothe.rents.where(clothe_id: params[:clothe_id])
+  end
+
+  def buscar
+
+    buscar la ropa rentada where pick_date and return_date; no sean los enviados por este usuario
+
   end
 
   def create
@@ -12,11 +18,31 @@ class RentsController < ApplicationController
     @rent = Rent.new(rent_params)
     @rent.clothe_id = @clothe.id
     @rent.user = current_user
-    if @rent.save
-      redirect_to clothe_path(@clothe), notice: "Acabas de alquilar esta prenda"     ## Modificar luego para que lo vea en la vista del usuario en una lista de reservas
-    else
-      render :new, status: :unprocessable_entity
-    end
+    #Rent.validar_fecha(params[:rent][:pickup_date], params[:rent][:return_date], @clothe)
+
+      if Date.parse(params[:rent][:pickup_date]) < Date.today
+        @rent.errors.add("no puede ser una fecha inferior a la de hoy")
+        one = true
+      end
+      if Rent.where(clothe_id: @clothe.id).find_by(pickup_date: Date.parse(params[:rent][:pickup_date])) || Rent.where(clothe_id: @clothe.id).find_by(return_date: Date.parse(params[:rent][:return_date]))
+          #antes qu e la fecha de retorno mas temprana
+        @rent.errors.add("Ya se encuentra reservada para tus fechas")
+        dos = true
+      end
+
+      if !one && !dos
+        if @rent.save
+          redirect_to rents_path, notice: "Acabas de alquilar esta prenda"
+          ## Modificar n  luego para que lo vea en la vista del usuario en una lista de reservas
+        else
+          render :new, status: :unprocessable_entity
+        end
+      end
+
+      
+
+
+
   end
 
   def my_rents

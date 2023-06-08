@@ -1,5 +1,7 @@
 class ClothesController < ApplicationController
   before_action :set_clothe, only: %i[show]
+  skip_before_action :authenticate_user!, only: %i[show index]
+
   def index
     @clothes = Clothe.all
     @rents = Rent.all
