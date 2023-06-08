@@ -1,4 +1,22 @@
-<%= simple_form_for @rent do |f| %>
-  <%= f.input :status%>
-  <%= f.submit %>
-<% end %>%
+<div class="container">
+  <div class="card mb-3 rounded shadow mt-3 justify-content-center" style="max-width: 600px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <% if @rent.clothe.photos.attached?%>
+            <%= image_tag @rent.clothe.photos.first, class:"img-fluid rounded-start", crop: :fill %>
+        <% else %>
+          <%= image_tag "https://www.bicifan.uy/wp-content/uploads/2016/09/producto-sin-imagen.png", class:"img-fluid rounded-start", crop: :fill %>
+        <% end %>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title fw-bold">@rent.clothe.name</h5>
+          <p class="card-text"><small class="text-muted">Estás por alquilar tu prenda a <%= @rent.user.first_name %> desde el <%= @rent.pickup_date %> hasta el <%= @rent.return_date %>.</small></p>
+          <%= simple_form_for @rent do |f| %>
+          <%= f.input :status %>
+            <%= f.submit "Aprobar", class: "btn btn-flat"%>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -33,9 +33,13 @@ class RentsController < ApplicationController
   end
 
   def update
-    @rent =  Rent.find(params[:id])
+    @rent = Rent.find(params[:id])
     @rent.status = params[:status]
-    @rent.save
+    if @rent.save
+      redirect_to offers_path
+    else
+      render :edit, status: unprocessable_entity
+    end
   end
 
   private
