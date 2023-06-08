@@ -1,31 +1,40 @@
+
 <% current_user.clothes.each do |clothe| %>
-<div class="card mb-3 shadow rounded p-5" style="max-width: 100;">
-  <div class="row g-0">
-    <div class="col-md-3">
-      <%= image_tag clothe.photos.first, class:"img-fluid rounded-start", crop: :fill %>
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title fw-bold"><%= clothe.name %></h5>
-          <ul class="list-group list-group-flush mt-3">
-          <% clothe.rents.where(status: false).each do |rent| %>
-            <li class="list-group-item">
-              <div class="d-flex justify-content-between align-items-end">
-                <div class="div">
-                  <p class="card-text"><%= rent.user.first_name%></p>
-                  <p class="card-text"><small class="text-muted"><%= rent.user.email %></small></p>
-                </div>
-                <div class="d-flex align-items-end justify-content-start">
-                    <span class="card-text ms-0 me-3"><small class="text-muted">Pick Up: <%= rent.pickup_date %></small></span>
-                    <span class="card-text ms-0 me-3"><small class="text-muted">Devolución: <%= rent.return_date %></small></span>
-                </div>
-                <%= link_to "Aceptar", edit_rent_path(rent.id), class: "btn btn-flat", style: "height:40px" %>
-              </div>
-            </li>
-           <% end %>
-          </ul>
+  <div class="card mb-3 shadow rounded p-5" style="max-width: 100;">
+    <div class="row g-0">
+      <div class="col-md-3">
+        <% if clothe.photos.attached?%>
+          <%= image_tag clothe.photos.first, class:"img-fluid rounded-start", crop: :fill %>
+        <% else %>
+        <%= image_tag "https://www.bicifan.uy/wp-content/uploads/2016/09/producto-sin-imagen.png", class:"img-fluid rounded-start", crop: :fill %>
+        <% end %>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title fw-bold"><%= clothe.name %></h5>
+            <ul class="list-group list-group-flush mt-3">
+              <% if clothe.rents.where(status: false).empty? %>
+                <p class="card-text"><small class="text-muted">Esta prenda no tiene rentas, ¡seguro no tardan en llegar <i class="fa-regular fa-face-smile-wink" style="color: #877887;"></i> !</small></p>
+              <% else %>
+                <% clothe.rents.where(status: false).each do |rent| %>
+                  <li class="list-group-item">
+                    <div class="d-flex justify-content-between align-items-end">
+                      <div class="div">
+                        <p class="card-text"><%= rent.user.first_name%></p>
+                        <p class="card-text"><small class="text-muted"><%= rent.user.email %></small></p>
+                      </div>
+                      <div class="d-flex align-items-end justify-content-start">
+                          <span class="card-text ms-0 me-3"><small class="text-muted">Pick Up: <%= rent.pickup_date %></small></span>
+                          <span class="card-text ms-0 me-3"><small class="text-muted">Devolución: <%= rent.return_date %></small></span>
+                      </div>
+                      <%= link_to "Aceptar", edit_rent_path(rent.id), class: "btn btn-flat", style: "height:40px" %>
+                    </div>
+                  </li>
+                <% end %>
+              <% end %>
+            </ul>
+        </div>
       </div>
     </div>
   </div>
-</div>
 <% end %>
