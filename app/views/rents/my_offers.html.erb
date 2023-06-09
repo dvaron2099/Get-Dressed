@@ -14,7 +14,7 @@
           <h5 class="card-title fw-bold"><%= clothe.name %></h5>
             <ul class="list-group list-group-flush mt-3">
               <% if clothe.rents.where(status: false).empty? %>
-                <p class="card-text"><small class="text-muted">Esta prenda no tiene rentas, ¡seguro no tardan en llegar <i class="fa-regular fa-face-smile-wink" style="color: #877887;"></i> !</small></p>
+                <p class="card-text"><small class="text-muted">Estas al día con esta prenda, ¡no tienes rentas por aprobar! <i class="fa-regular fa-face-smile-wink" style="color: #877887;"></i> !</small></p>
               <% else %>
                 <% clothe.rents.where(status: false).each do |rent| %>
                   <li class="list-group-item">

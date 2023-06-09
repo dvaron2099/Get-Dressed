@@ -13,21 +13,28 @@
   <div class="container d-flex justify-content-evenly flex-wrap">
     <% @clothes.each do |clothe| %>
       <div class="card mb-3 text-center" style="width: 18rem;">
-      <% if clothe.photos.attached? %>
-        <%= image_tag clothe.photos.first, class:"card-img-top", crop: :fill %>
-      <% else %>
-        <%= image_tag "https://www.bicifan.uy/wp-content/uploads/2016/09/producto-sin-imagen.png", class:"card-img-top", crop: :fill  %>
-      <% end %>
-        <div class="card-body">
-          <%= link_to clothe.name, clothe_path(clothe), class:"card-title text-decoration-none fw-bold fs-5 text mb-2" %>
-          <h6 class="card-subtitle mb-2 text-muted fs-6 text"><%=clothe.category%></h6>
-          <div class="d-flex justify-content-center">
-            <p class="card-text fw-bold me-2">$<%= clothe.price %></p>
-            <i class="fa-solid fa-ruler" style="color: #646464;"></i>
-            <p class="card-text text-muted ms-1"><%= clothe.size %></p>
+          <% if clothe.photos.attached? %>
+            <%= image_tag clothe.photos.first, class:"card-img-top", crop: :fill %>
+          <% else %>
+            <%= image_tag "https://www.bicifan.uy/wp-content/uploads/2016/09/producto-sin-imagen.png", class:"card-img-top", crop: :fill  %>
+          <% end %>
+          <div class="card-body">
+            <%= link_to clothe.name, clothe_path(clothe), class:"card-title text-decoration-none fw-bold fs-5 text mb-2" %>
+            <h6 class="card-subtitle mb-2 text-muted fs-6 text"><%=clothe.category%></h6>
+            <div class="d-flex justify-content-center">
+              <p class="card-text fw-bold me-2">$<%= clothe.price %></p>
+              <i class="fa-solid fa-ruler" style="color: #646464;"></i>
+              <p class="card-text text-muted ms-1"><%= clothe.size %></p>
+            </div>
+              <% ropa = Rent.find_by(clothe_id: clothe.id) %>
+            <%# if ropa.status == false %>
+              <%= link_to "Quiero Alquilarla", new_clothe_rent_path(clothe), class:"btn btn-flat" %>
+              <%# else %>
+              <%#= link_to "Quiero Alquilarla", new_clothe_rent_path(clothe), class:"btn btn-flat" %>
+                <p class= "text-muted mt-1" >  Rentada hasta <%#= ropa.return_date%></p>
+              <%#=link_to "Rentada hasta #{ropa.return_date}",clothe_path(clothe), class:"btn btn-flat" %>
+            <%# end %>
           </div>
-          <%= link_to "Quiero Alquilarla", new_clothe_rent_path(clothe), class:"btn btn-flat" %>
-        </div>
       </div>
     <% end %>
   </div>
