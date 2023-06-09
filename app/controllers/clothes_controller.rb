@@ -1,7 +1,11 @@
 class ClothesController < ApplicationController
   before_action :set_clothe, only: %i[show]
   def index
-    @clothes = Clothe.all
+    if params[:query].present?
+      @clothes = Clothe.where("name ILIKE :query OR size ILIKE :query", query: "%#{params[:query]}%")
+    else
+      @clothes = Clothe.all
+    end
   end
 
   def show
