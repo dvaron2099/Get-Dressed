@@ -1,11 +1,17 @@
 class ClothesController < ApplicationController
   before_action :set_clothe, only: %i[show]
+  skip_before_action :authenticate_user!, only: %i[show index]
+
   def index
+
     if params[:query].present?
       @clothes = Clothe.where("name ILIKE :query OR size ILIKE :query", query: "%#{params[:query]}%")
     else
       @clothes = Clothe.all
     end
+
+    @rents = Rent.all
+
   end
 
   def show

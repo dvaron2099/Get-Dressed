@@ -15,7 +15,7 @@
           <ul>
             <li class="card-text">Fecha de inicio: <%= rent.pickup_date %> </li>
             <li class="card-text">Fecha de devolución: <%= rent.return_date %> </li>
-            <li class="card-text">Status: <%= rent.status %></li>
+            <li class="card-text">Status: <%= rent.status == true ? "Alquiler aprobado" : "Pendiente de aprobación" %></li>
           </ul>
         </div>
       </div>
