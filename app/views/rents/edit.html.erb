@@ -10,7 +10,7 @@
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title fw-bold">@rent.clothe.name</h5>
+          <h5 class="card-title fw-bold"><%= @rent.clothe.name%></h5>
           <p class="card-text"><small class="text-muted">Estás por alquilar tu prenda a <%= @rent.user.first_name %> desde el <%= @rent.pickup_date %> hasta el <%= @rent.return_date %>.</small></p>
           <%= simple_form_for @rent do |f| %>
           <%= f.input :status %>
@@ -20,3 +20,4 @@
       </div>
     </div>
   </div>
+</div>

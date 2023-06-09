@@ -18,12 +18,17 @@ class RentsController < ApplicationController
     @rent.clothe_id = @clothe.id
     @rent.user_id = current_user.id
     p @rent.valid?
-
-    if @rent.save
-      redirect_to rents_path(@clothe), notice: "Acabas de alquilar esta prenda"     ## Modificar luego para que lo vea en la vista del usuario en una lista de reservas
-    else
+    if @clothe.user_id == current_user.id
+      flash[:alert] = "No podés rentar tu propia prenda."
       render :new, status: :unprocessable_entity
+    else
+      if @rent.save
+        redirect_to rents_path(@clothe), notice: "Acabas de alquilar esta prenda"     ## Modificar luego para que lo vea en la vista del usuario en una lista de reservas
+      else
+        render :new, status: :unprocessable_entity
+      end
     end
+
   end
 
   def my_rents
@@ -36,7 +41,6 @@ class RentsController < ApplicationController
 
   def edit
     @rent = Rent.find(params[:id])
-
   end
 
   def update
@@ -45,7 +49,8 @@ class RentsController < ApplicationController
     if @rent.save
       redirect_to offers_path
     else
-      render :edit, status: unprocessable_entity
+      flash[:alert]="#{@rent.errors.full_messages}"
+      render :edit, status: :unprocessable_entity
     end
   end
 
