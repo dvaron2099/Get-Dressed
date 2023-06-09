@@ -9,7 +9,7 @@
       <%= simple_form_for [@clothe, @rent] do |f| %>
         <%= f.input :pickup_date, html5:true, label: "La quiero desde" %>
         <%= f.input :return_date, html5:true, label: "La devuelvo" %>
-        <%= f.submit "Reservar", class: "btn btn-success" %> <%= link_to "Volver", clothes_path, class:"btn btn-warning" %>
+        <%= f.submit "Reservar", data:{turbo: false}, class: "btn btn-success" %> <%= link_to "Volver", clothes_path, class:"btn btn-warning" %>
       <% end %>
       <small class="text-danger"><%= @rent.errors.messages[:base][0] %></small>
     </div>

@@ -1,0 +1,91 @@
+<div id="my-alert">
+  <% if notice %>
+    <div class="notice" role="alert">
+      <%= notice %>
+      <i class="fa-solid fa-check"></i>
+      <%# <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button> %>
+    </div>
+  <% end %>
+  <% if alert %>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <%= alert %>
+      <i class="fa-solid fa-xmark"></i>
+      <%# <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button> %>
+    </div>
+  <% end %>
+</div>
+
+<style>
+.notice {
+  background-color: white;
+  font-weight: 500;
+  z-index: 3;
+  color: $blue-scale-800 !important;
+  position: fixed;
+  right: 2rem;
+  bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 16px;
+  gap: 0.5rem;
+  box-shadow: 3.97576px 11.9273px 11.9273px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  animation: slideOutRight 1s;
+  animation-play-state: paused; /* Agrega esta línea */
+  animation-fill-mode: forwards;
+  & i {
+    color: #66C49D;
+    font-size: 24px;
+  }
+  @keyframes slideOutRight {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+  /* Nueva regla para la clase slide-out-right */
+  &.slide-out-right {
+    animation-play-state: running; /* Agrega esta línea */
+  }
+}
+.alert {
+  background-color: $negative-scale-00 !important;
+  font-weight: 500;
+  z-index: 3;
+  color: $blue-scale-800 !important;
+  position: fixed !important;
+  right: 2rem;
+  bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 16px !important;
+  gap: 0.5rem;
+  box-shadow: 3.97576px 11.9273px 11.9273px rgba(0, 0, 0, 0.1);
+  border-radius: 4px !important;
+  animation: slideOutRight 1s;
+  animation-play-state: paused;
+  animation-fill-mode: forwards;
+  @keyframes slideOutRight {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+  /* Nueva regla para la clase slide-out-right */
+  &.slide-out-right {
+    animation-play-state: running; /* Agrega esta línea */
+  }
+}
+</style>
