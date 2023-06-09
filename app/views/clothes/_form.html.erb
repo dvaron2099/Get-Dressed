@@ -9,7 +9,7 @@
     <%= f.input :gender %>
     <%= f.input :category %>
     <%= f.input :price %>
-    <%= f.input :size %>
+    <%= f.input :size, :collection => %w[XS S M L XL XXL UNICO]  %>
     <%= f.input :photos, as: :file, input_html: {multiple: true} %>
     <%= f.input :description %>
     <div class="row d-flex justify-content-center">
