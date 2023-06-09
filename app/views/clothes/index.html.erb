@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img.freepik.com/fotos-premium/ropa-moda-perchas-armario-sobre-fondo-color_441923-7474.jpg);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(https://img.freepik.com/fotos-premium/ropa-moda-perchas-armario-sobre-fondo-color_441923-7474.jpg);">
   <div class="container">
     <h1>Sumate a la <strong>moda circular</strong>!</h1>
     <p>Alquilá las prendas que te gustan y ofertá las tuyas.</p>
@@ -7,17 +7,29 @@
 </div>
 
 
-
-  <h4 class="ms-4 mt-4"> Prendas destacadas </h4>
-  <br>
-  <div class="container d-flex justify-content-evenly flex-wrap">
-    <% @clothes.each do |clothe| %>
-      <div class="card mb-3 text-center" style="width: 18rem;">
-          <% if clothe.photos.attached? %>
-            <%= image_tag clothe.photos.first, class:"card-img-top", crop: :fill %>
-          <% else %>
-            <%= image_tag "https://www.bicifan.uy/wp-content/uploads/2016/09/producto-sin-imagen.png", class:"card-img-top", crop: :fill  %>
-          <% end %>
+<div class="container">
+  <div class="barra row justify-content-center mt-2">
+    <div class="col-sm-8 my-3">
+      <%= form_with url: clothes_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Encuentra tu prenda"
+          %>
+        <%= submit_tag "Buscar", name: "", class: "btn btn-flat" %>
+      <% end %>
+    </div>
+  </div>
+    <h4 class="ms-4 mt-4"> Prendas destacadas </h4>
+    <br>
+    <div class="container-clothes d-flex justify-content-evenly flex-wrap">
+      <% @clothes.each do |clothe| %>
+        <div class="card mb-3 text-center" style="width: 18rem;">
+        <% if clothe.photos.attached? %>
+          <%= image_tag clothe.photos.first, class:"card-img-top", crop: :fill %>
+        <% else %>
+          <%= image_tag "https://www.bicifan.uy/wp-content/uploads/2016/09/producto-sin-imagen.png", class:"card-img-top", crop: :fill  %>
+        <% end %>
           <div class="card-body">
             <%= link_to clothe.name, clothe_path(clothe), class:"card-title text-decoration-none fw-bold fs-5 text mb-2" %>
             <h6 class="card-subtitle mb-2 text-muted fs-6 text"><%=clothe.category%></h6>
@@ -26,15 +38,9 @@
               <i class="fa-solid fa-ruler" style="color: #646464;"></i>
               <p class="card-text text-muted ms-1"><%= clothe.size %></p>
             </div>
-              <% ropa = Rent.find_by(clothe_id: clothe.id) %>
-            <%# if ropa.status == false %>
-              <%= link_to "Quiero Alquilarla", new_clothe_rent_path(clothe), class:"btn btn-flat" %>
-              <%# else %>
-              <%#= link_to "Quiero Alquilarla", new_clothe_rent_path(clothe), class:"btn btn-flat" %>
-                <p class= "text-muted mt-1" >  Rentada hasta <%#= ropa.return_date%></p>
-              <%#=link_to "Rentada hasta #{ropa.return_date}",clothe_path(clothe), class:"btn btn-flat" %>
-            <%# end %>
+            <%= link_to "Quiero Alquilarla", new_clothe_rent_path(clothe), class:"btn btn-flat" %>
           </div>
-      </div>
-    <% end %>
-  </div>
+        </div>
+      <% end %>
+    </div>
+</div>
